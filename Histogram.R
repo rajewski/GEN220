@@ -1,0 +1,8 @@
+data <- read.table("Data.txt", sep="\t")
+png(file="Histogram.png")
+hist(data$V2, main="Histogram of PolyA-tail Lengths", xlab="")
+dev.off()
+Results <- file("Q3_Results.txt", open="wt")
+sink(Results, append=TRUE)
+summary(data$V2)
+sink()
